@@ -48,13 +48,13 @@ public class Main {
         // 测试3 测试存在包含大量相同元素的数组
         // 但此时, 对于含有大量相同元素的数组, 我们的快速排序算法再次退化成了O(n^2)级别的算法
         // 思考一下为什么在这种情况下, 快排退化成了O(n^2)的算法? :)
-//        System.out.println("Test for random array, size = " + N + " , random range [0,10]");
-//
-//        arr1 = SortTestHelper.generateRandomArray(N, 0, 10);
-//        arr2 = Arrays.copyOf(arr1, arr1.length);
-//
-//        SortTestHelper.testSort("cn.lucas.mergeSort.MergeSort", arr1);
-//        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort", arr2);
+        System.out.println("Test for random array, size = " + N + " , random range [0,10]");
+
+        arr1 = SortTestHelper.generateRandomArray(N, 0, 10);
+        arr2 = Arrays.copyOf(arr1, arr1.length);
+
+        SortTestHelper.testSort("cn.lucas.mergeSort.MergeSort", arr1);
+        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort2Ways", arr2);
 
 
         return;
