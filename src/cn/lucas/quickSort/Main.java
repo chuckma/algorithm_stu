@@ -54,7 +54,7 @@ public class Main {
         arr2 = Arrays.copyOf(arr1, arr1.length);
 
         SortTestHelper.testSort("cn.lucas.mergeSort.MergeSort", arr1);
-        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort2Ways", arr2);
+        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort3Ways", arr2);
 
 
         return;
