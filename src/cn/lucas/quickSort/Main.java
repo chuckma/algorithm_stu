@@ -44,7 +44,7 @@ public class Main {
 
         SortTestHelper.testSort("cn.lucas.mergeSort.MergeSort", arr1);
         SortTestHelper.testSort("cn.lucas.quickSort.QuickSort2Ways", arr2);
-        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort3Ways", arr2);
+        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort3Ways", arr3);
 
         System.out.println();
 
@@ -60,7 +60,7 @@ public class Main {
 
         SortTestHelper.testSort("cn.lucas.mergeSort.MergeSort", arr1);
         SortTestHelper.testSort("cn.lucas.quickSort.QuickSort2Ways", arr2);
-        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort3Ways", arr2);
+        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort3Ways", arr3);
 
 
         return;
