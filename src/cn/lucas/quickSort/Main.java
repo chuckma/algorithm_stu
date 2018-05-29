@@ -20,9 +20,11 @@ public class Main {
 
         Integer[] arr1 = SortTestHelper.generateRandomArray(N, 0, N);
         Integer[] arr2 = Arrays.copyOf(arr1, arr1.length);
+        Integer[] arr3 = Arrays.copyOf(arr1, arr1.length);
 
         SortTestHelper.testSort("cn.lucas.mergeSort.MergeSort", arr1);
-        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort", arr2);
+        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort2Ways", arr2);
+        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort3Ways", arr3);
 
         System.out.println();
 
@@ -38,9 +40,11 @@ public class Main {
 
         arr1 = SortTestHelper.generateNearlyOrderedArray(N, swapTimes);
         arr2 = Arrays.copyOf(arr1, arr1.length);
+        arr3 = Arrays.copyOf(arr1, arr1.length);
 
         SortTestHelper.testSort("cn.lucas.mergeSort.MergeSort", arr1);
-        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort", arr2);
+        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort2Ways", arr2);
+        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort3Ways", arr2);
 
         System.out.println();
 
@@ -52,8 +56,10 @@ public class Main {
 
         arr1 = SortTestHelper.generateRandomArray(N, 0, 10);
         arr2 = Arrays.copyOf(arr1, arr1.length);
+        arr3 = Arrays.copyOf(arr1, arr1.length);
 
         SortTestHelper.testSort("cn.lucas.mergeSort.MergeSort", arr1);
+        SortTestHelper.testSort("cn.lucas.quickSort.QuickSort2Ways", arr2);
         SortTestHelper.testSort("cn.lucas.quickSort.QuickSort3Ways", arr2);
 
 
