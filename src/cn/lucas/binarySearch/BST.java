@@ -51,4 +51,41 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
 
+    /**
+     * 二分搜索树插入元素
+     *
+     * @param key
+     * @param value
+     */
+    public void insert(Key key, Value value) {
+        root = insert(root, key, value);
+    }
+
+    /**
+     * 向以 node 为节点的二分搜索树中，插入节点数据（key，value）
+     * 返回插入新节点后二分搜索树的 根 root
+     *
+     * @param node
+     * @param key
+     * @param value
+     * @return
+     */
+    private Node insert(Node node, Key key, Value value) {
+        // 递归到底的情况
+        if (node == null) {
+            count++;
+            return new Node(key, value);
+        }
+        if (key.compareTo(node.key) == 0) {
+            // key 是否就等于 node 的 key
+            node.value = value;
+        } else if (key.compareTo(node.key) < 0) {
+            // 如果 key 比 node 的key 小，就在 node 的左子树插入
+            node.left = insert(node.left, key, value);
+        } else {
+            node.right = insert(node.right, key, value);
+        }
+        return node;
+    }
+
 }
