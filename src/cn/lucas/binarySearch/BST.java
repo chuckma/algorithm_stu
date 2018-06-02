@@ -197,6 +197,94 @@ public class BST<Key extends Comparable<Key>, Value> {
         }
     }
 
+    /**
+     * 最小键值
+     * @return
+     */
+    public Key minimum() {
+        if (count == 0) {
+            throw new IllegalArgumentException("BST is empty");
+        } else {
+            Node node = minimum(root);
+            return node.key;
+        }
+    }
+
+    private Node minimum(Node node) {
+        if (node.left == null) {
+            return node;
+        } else {
+            return minimum(node.left);
+        }
+    }
+
+
+    /**
+     * 最大键值
+     * @return
+     */
+    public Key maxmum() {
+        if (count == 0) {
+            throw new IllegalArgumentException("BST is empty");
+        } else {
+            Node node = maxmum(root);
+            return node.key;
+        }
+    }
+
+    private Node maxmum(Node node) {
+        if (node.right == null) {
+            return node;
+        } else {
+            return maxmum(node.right);
+        }
+    }
+
+    /**
+     * 删除最小值
+     */
+    public void removeMin() {
+        if (root!=null) {
+            root=removeMin(root);
+        }
+    }
+
+    private Node removeMin(Node node) {
+        if (node.left == null) {
+            Node rightNode = node.right;
+            node.right = null;
+            count--;
+            return rightNode;
+        }
+
+        node.left = removeMin(node.left);
+        return node;
+
+    }
+
+    /**
+     * 删除最大值
+     */
+    public void removeMax() {
+        if (root != null) {
+
+        }
+    }
+
+    private Node removeMax(Node node) {
+        if (node.right == null) {
+            Node leftNode = node.left;
+            node.left=null;
+            count--;
+            return leftNode;
+        }
+
+        node.right = removeMax(node.right);
+        return node;
+    }
+
+
+
     // 测试二分搜索树
     public static void main(String[] args) {
 
@@ -234,6 +322,13 @@ public class BST<Key extends Comparable<Key>, Value> {
             else
                 assert res == null;
         }
+
+
+        String name = "abner chai";
+        //String name = null;
+        assert (name!=null):"变量name为空null";
+        System.out.println(name);
+
     }
 
 }
