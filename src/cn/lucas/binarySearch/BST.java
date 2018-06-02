@@ -1,5 +1,8 @@
 package cn.lucas.binarySearch;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * @Author Lucas Ma
  * @Date 2018/6/1 下午9:29
@@ -176,6 +179,24 @@ public class BST<Key extends Comparable<Key>, Value> {
         }
     }
 
+    /**
+     * 层序遍历
+     */
+    public void levelOrder() {
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node node = queue.remove();
+            System.out.println(node.key);
+            if (node.left != null) {
+                queue.add(node.left);
+            }
+            if (node.right != null) {
+                queue.add(node.right);
+            }
+        }
+    }
+
     // 测试二分搜索树
     public static void main(String[] args) {
 
@@ -183,12 +204,12 @@ public class BST<Key extends Comparable<Key>, Value> {
 
         // 创建一个数组，包含[0...N)的所有元素
         Integer[] arr = new Integer[N];
-        for(int i = 0 ; i < N ; i ++)
+        for (int i = 0; i < N; i++)
             arr[i] = new Integer(i);
 
         // 打乱数组顺序
-        for(int i = 0 ; i < N ; i ++){
-            int pos = (int) (Math.random() * (i+1));
+        for (int i = 0; i < N; i++) {
+            int pos = (int) (Math.random() * (i + 1));
             Integer t = arr[pos];
             arr[pos] = arr[i];
             arr[i] = t;
@@ -199,16 +220,16 @@ public class BST<Key extends Comparable<Key>, Value> {
 
         // 我们测试用的的二分搜索树的键类型为Integer，值类型为String
         // 键值的对应关系为每个整型对应代表这个整型的字符串
-        BST<Integer,String> bst = new BST<Integer,String>();
-        for(int i = 0 ; i < N ; i ++)
+        BST<Integer, String> bst = new BST<Integer, String>();
+        for (int i = 0; i < N; i++)
             bst.insert(new Integer(arr[i]), Integer.toString(arr[i]));
 
         // 对[0...2*N)的所有整型测试在二分搜索树中查找
         // 若i在[0...N)之间，则能查找到整型所对应的字符串
         // 若i在[N...2*N)之间，则结果为null
-        for(int i = 0 ; i < 2*N ; i ++){
+        for (int i = 0; i < 2 * N; i++) {
             String res = bst.search(new Integer(i));
-            if( i < N )
+            if (i < N)
                 assert res.equals(Integer.toString(i));
             else
                 assert res == null;
