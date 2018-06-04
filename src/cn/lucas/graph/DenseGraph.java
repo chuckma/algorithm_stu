@@ -3,6 +3,8 @@ package cn.lucas.graph;
 /**
  * @Author Lucas Ma
  * @Date 2018/6/4 下午9:25
+ *
+ *  稠密图 - 邻接矩阵
  */
 public class DenseGraph {
 
