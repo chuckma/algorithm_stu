@@ -51,14 +51,15 @@ public class DenseGraph {
         assert v >= 0 && v < n;
         assert w >= 0 && w < n;
 
-        if (hasEdge(v, w))
+        if (hasEdge(v, w)){// 如果本身已经有边，则返回
             return;
-
-        g[v][w] = true;
-        if (!directed)
+        }
+        g[v][w] = true; // 让v ，w 之间有一条边
+        if (!directed) {// 如果是无向图
             g[w][v] = true;
+        }
 
-        m++;
+        m++;// 边增加1
     }
 
 
