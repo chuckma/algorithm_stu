@@ -38,7 +38,7 @@ public class main283 {
     }
 
 
-    public static void main(String args[]) throws NoSuchMethodException {
+    public static void main(String args[]){
 
         int[] arr = {0, 1, 0, 3, 12};
         moveZeroes(arr);
