@@ -23,7 +23,7 @@ public class ListNode {
 
         this.val = arr[0];
         ListNode curNode = this;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             curNode.next = new ListNode(arr[i]);
             curNode = curNode.next;
         }
