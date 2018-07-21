@@ -43,7 +43,7 @@ public class Main257 {
         List<String> res = new ArrayList<>();
 
         if (root == null) {
-            return null;
+            return res;
         }
 
         // 如果root 节点的左子树和右子树都为空，说明路劲到此为止
